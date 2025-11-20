@@ -1,6 +1,6 @@
 "use client";
 
-import { WorkflowTask, RecommendedTool } from "@/types";
+import { WorkflowTask, RecommendedTool } from "../types";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, Legend } from "recharts";
 
 interface WorkflowBreakdownProps {

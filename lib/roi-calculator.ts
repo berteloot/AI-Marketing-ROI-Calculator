@@ -4,7 +4,7 @@ import {
   RevenueModel,
   ROICalculation,
   Scenario,
-} from "@/types";
+} from "../types";
 
 /**
  * Deterministic ROI Calculator

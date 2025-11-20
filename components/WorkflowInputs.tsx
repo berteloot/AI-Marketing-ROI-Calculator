@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { DepartmentType, PrimaryWorkflow, UserInputs } from "@/types";
+import { DepartmentType, PrimaryWorkflow, UserInputs } from "../types";
 
 interface WorkflowInputsProps {
   onGenerate: (inputs: UserInputs) => void;

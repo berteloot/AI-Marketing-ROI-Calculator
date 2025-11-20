@@ -1,12 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import WorkflowInputs from "@/components/WorkflowInputs";
-import ScenarioCard from "@/components/ScenarioCard";
-import WorkflowBreakdown from "@/components/WorkflowBreakdown";
-import BusinessCaseGenerator from "@/components/BusinessCaseGenerator";
-import { UserInputs, AIBenchmarkResponse, Scenario } from "@/types";
-import { ROICalculator } from "@/lib/roi-calculator";
+import WorkflowInputs from "../components/WorkflowInputs";
+import ScenarioCard from "../components/ScenarioCard";
+import WorkflowBreakdown from "../components/WorkflowBreakdown";
+import BusinessCaseGenerator from "../components/BusinessCaseGenerator";
+import { UserInputs, AIBenchmarkResponse, Scenario } from "../types";
+import { ROICalculator } from "../lib/roi-calculator";
 
 export default function Home() {
   const [inputs, setInputs] = useState<UserInputs | null>(null);

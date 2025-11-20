@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { UserInputs, Scenario, AIBenchmarkResponse } from "@/types";
+import { UserInputs, Scenario, AIBenchmarkResponse } from "../types";
 
 interface BusinessCaseGeneratorProps {
   inputs: UserInputs;

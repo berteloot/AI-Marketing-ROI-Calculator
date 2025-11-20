@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import OpenAI from "openai";
-import { UserInputs, AIBenchmarkResponse, RecommendedTool, DepartmentType, PrimaryWorkflow } from "@/types";
+import { UserInputs, AIBenchmarkResponse, RecommendedTool, DepartmentType, PrimaryWorkflow } from "../../../types";
 
 /**
  * Lazy initialization of OpenAI client to avoid build-time errors

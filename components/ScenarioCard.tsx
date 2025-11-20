@@ -1,6 +1,6 @@
 "use client";
 
-import { Scenario } from "@/types";
+import { Scenario } from "../types";
 
 interface ScenarioCardProps {
   scenario: Scenario;
