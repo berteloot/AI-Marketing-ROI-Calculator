@@ -2,9 +2,19 @@ import { NextRequest, NextResponse } from "next/server";
 import OpenAI from "openai";
 import { UserInputs, AIBenchmarkResponse, RecommendedTool, DepartmentType, PrimaryWorkflow } from "@/types";
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+/**
+ * Lazy initialization of OpenAI client to avoid build-time errors
+ * when environment variables are not available
+ */
+function getOpenAIClient(): OpenAI {
+  const apiKey = process.env.OPENAI_API_KEY;
+  if (!apiKey) {
+    throw new Error("OPENAI_API_KEY environment variable is not set");
+  }
+  return new OpenAI({
+    apiKey,
+  });
+}
 
 // Rate limiting: Simple in-memory store (for production, use Redis/Upstash)
 const rateLimitMap = new Map<string, { count: number; resetTime: number; timestamps: number[] }>();
@@ -954,6 +964,7 @@ Sanity checks:
 
 - All numeric estimates must be conservative and defensible rather than optimistic.`;
 
+    const openai = getOpenAIClient();
     const completion = await openai.chat.completions.create({
       model: "gpt-4o",
       temperature: 0.2, // Lower temperature for more deterministic, schema-adherent function calling
